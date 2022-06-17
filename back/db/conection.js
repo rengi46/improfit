@@ -1,11 +1,9 @@
 const { connect, connection } = require("mongoose");
-const CONFIG = require("../config");
 
-const connectDatabase = async () => {
-    await connect(CONFIG.db)
+const connectDatabase = async (db) => {
+    await connect(db)
 };
 
 module.exports = {
   connectDatabase,
-  connection,
 };
