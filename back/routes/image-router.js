@@ -1,9 +1,9 @@
 const {Router} = require("express");
-const {getImageById,postImage} = require("../controller/image-controller");
+const {getImage,postImage} = require("../controller/image-controller");
 
 const imageRouter = Router();
 
-imageRouter.get("/image/:id", getImageById)
+imageRouter.get("/image/:id", getImage)
 imageRouter.post("/image", postImage)
 
 

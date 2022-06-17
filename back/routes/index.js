@@ -1,5 +1,5 @@
 const imageRouter = require("./image-router");
-const comentsRouter = require("./coments-router");
+const commentsRouter = require("./comments-router");
 const imageListRouter = require("./imageList-router");
 
 
@@ -7,7 +7,7 @@ const routes = (server) => {
     server.use(
         imageListRouter,
         imageRouter,
-        comentsRouter
+        commentsRouter
       );
   };
 

@@ -1,7 +1,9 @@
 const response = require("../utils/responseModule")
+const {getImageListToDB} = require("../services/image-strore");
 
 async function getImageList(req,res){
-    response.success(req,res,`getImageList`);
+    const imageList = await getImageListToDB();
+    response.success(req,res,imageList);
 }
 
 module.exports = {
