@@ -1,11 +1,10 @@
 const {Router} = require("express");
+const {getComentsById,postComent} = require("../controller/coments-controller");
 
 const comentsRouter = Router();
 
-comentsRouter.get("/", (req,res)=>{
-    console.log("get coments")
-    res.send("get coments")
-})
+comentsRouter.get("/coments/:id", getComentsById)
+comentsRouter.post("/coments", postComent)
 
 
 module.exports = comentsRouter;
