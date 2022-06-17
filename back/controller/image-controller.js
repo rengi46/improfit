@@ -1,5 +1,5 @@
 const response = require("../utils/responseModule");
-const {addImageToDB,getImageToDB} = require("../services/image-strore");
+const {addImageToDB,getImageToDB, getImageListToDB} = require("../services/image-strore");
 
 async function getImage(req,res){
     const {id} = req.params;
@@ -12,7 +12,9 @@ async function postImage(req,res){
         response.error(req,res,`title and url are required`);
         return;
     }
-    const image = await addImageToDB(title, url);
+    const imageList = await getImageListToDB()
+    const rank = imageList? imageList.length + 1: 1;
+    const image = await addImageToDB(title, url,rank);
     response.success(req,res,image);
 }
 
