@@ -10,11 +10,15 @@ const addImageToDB = async (title,url,rank) => {
     }
 }
 
-const getImageToDB = (req, res) => {
-
+const getImageToDB = async(rank) => {
+    try{
+        return imageModel.findOne({"rank":rank})
+    }catch(err){
+        return err;
+    }
 }
 
-const getImageListToDB = async(req, res) => {
+const getImageListToDB = async() => {
     try{
         return imageModel.find()
     }catch(err){

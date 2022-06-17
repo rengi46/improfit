@@ -3,7 +3,11 @@ const {addImageToDB,getImageToDB, getImageListToDB} = require("../services/image
 
 async function getImage(req,res){
     const {id} = req.params;
-    response.success(req,res,`getImageById${id}`);
+    if(!id){
+        return response.error(res,400,"Bad Request");
+    }
+    const image = await getImageToDB(id);
+    response.success(req,res,image);
 }
 
 async function postImage(req,res){
