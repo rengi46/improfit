@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const mySchema = new Schema({
-    rankImage: {
+    imageId: {
                   type: mongoose.Schema.Types.ObjectId,
                   ref:"images"
               },

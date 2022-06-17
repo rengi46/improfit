@@ -3,7 +3,11 @@ const {addcommentById,getCommentListById} = require("../services/comments-store"
 
 async function getcommentsById(req,res){
     const {id} = req.params;
-    response.success(req,res,`getcommentsById${id}`);
+    if(!id){
+        return response.error(res,400,"Bad Request");
+    }
+    const comentList = await getCommentListById(id);
+    response.success(req,res,comentList);
 }
 
 async function postcomment(req,res){
@@ -12,7 +16,9 @@ async function postcomment(req,res){
         response.error(req,res,`imageId and comment are required`);
         return;
     }
-    res.send(`postcomment`);
+    const comentList = await addcommentById(imageId,comment);
+
+    response.success(req,res,comentList);
 }
 
 module.exports = {
