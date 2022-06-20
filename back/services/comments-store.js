@@ -1,6 +1,6 @@
 const commentsModel = require('../models/comments-model');
 
-const addcommentById = async(imageId,comment) => {
+const addCommentToDB = async(imageId,comment) => {
     try{
         const commentsList = await commentsModel.findOne({imageId:imageId});
         if(!commentsList){
@@ -16,7 +16,7 @@ const addcommentById = async(imageId,comment) => {
     }
 }
 
-const getCommentListById =async (id) => {
+const getCommentListToDB =async (id) => {
     try{
         const comentList = await commentsModel.find({imageId:id});
         return comentList;
@@ -26,6 +26,6 @@ const getCommentListById =async (id) => {
 }
 
 module.exports = {
-    addcommentById,
-    getCommentListById
+    addCommentToDB,
+    getCommentListToDB
 }

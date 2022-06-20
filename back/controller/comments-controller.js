@@ -1,12 +1,12 @@
 const response = require("../utils/responseModule")
-const {addcommentById,getCommentListById} = require("../services/comments-store");
+const {addCommentToDB,getCommentListToDB} = require("../services/comments-store");
 
 async function getcommentsById(req,res){
     const {id} = req.params;
     if(!id){
         return response.error(res,400,"Bad Request");
     }
-    const comentList = await getCommentListById(id);
+    const comentList = await getCommentListToDB(id);
     response.success(req,res,comentList);
 }
 
@@ -16,7 +16,7 @@ async function postcomment(req,res){
         response.error(req,res,`imageId and comment are required`);
         return;
     }
-    const comentList = await addcommentById(imageId,comment);
+    const comentList = await addCommentToDB(imageId,comment);
 
     response.success(req,res,comentList);
 }
