@@ -1,9 +1,11 @@
 const fs = require('fs');
 const response = require("../utils/responseModule");
 const multer = require("multer");
+
 const {addImageToDB,getImageToDB, getImageListToDB} = require("../services/image-strore");
 const s3 = require("../aws/index");
 const config = require("../config");
+
 const storage = multer.diskStorage({ destination (req, file, cb) { cb(null, 'storage/uploads/images'); }, filename (req, file, cb) { cb(null, file.originalname); } }) 
 const upload = multer({storage});
 

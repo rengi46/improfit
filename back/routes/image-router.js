@@ -5,7 +5,6 @@ const storage = multer.diskStorage({ destination (req, file, cb) { cb(null, 'sto
 const upload = multer({storage});
 
 const imageRouter = Router();
-// app.post('/upload', upload.single('image'), (req, res) => { if(req.file) { // I can access req.body from here if I want res.json(req.file); } else throw 'error'; });
 
 imageRouter.get("/image/:id", getImage)
 imageRouter.post("/image", upload.single('image'), postImage)
