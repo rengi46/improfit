@@ -1,9 +1,17 @@
+import {
+  Routes,
+  Route,
+} from "react-router-dom";
+
+import { ImageGrid } from "./components/grid";
+import { ImagePgae } from "./components/imagePgae";
 
 function App() {
   return (
-    <div className="w- text-center">
-      hola mundo
-    </div>
+    <Routes>
+      <Route path="/" element={<ImageGrid />} />
+      <Route path="/:id" element={<ImagePgae />} />
+    </Routes>
   );
 }
 
