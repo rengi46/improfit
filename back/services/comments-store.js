@@ -1,13 +1,14 @@
 const commentsModel = require('../models/comments-model');
 
+const newCommentsByImage = async(imageId) => {
+    const comments = await new commentsModel({ imageId, comments: [] });
+    const commentsSaved = await comments.save();
+    return commentsSaved;
+}
+
 const addCommentToDB = async(imageId,comment) => {
     try{
         const commentsList = await commentsModel.findOne({imageId:imageId});
-        if(!commentsList){
-            const comments = await new commentsModel({ imageId, comments: [comment] });
-            const commentsSaved = await comments.save();
-            return commentsSaved;
-        }
         commentsList.comments.push(comment);
         const commentsSaved = await commentsList.save();
         return commentsSaved;
@@ -26,6 +27,7 @@ const getCommentListToDB =async (id) => {
 }
 
 module.exports = {
+    newCommentsByImage,
     addCommentToDB,
     getCommentListToDB
 }

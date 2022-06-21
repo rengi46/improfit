@@ -1,5 +1,5 @@
 const response = require("../utils/responseModule")
-const {addCommentToDB,getCommentListToDB} = require("../services/comments-store");
+const {newCommentsByImage,addCommentToDB,getCommentListToDB} = require("../services/comments-store");
 
 async function getcommentsById(req,res){
     const {id} = req.params;
@@ -17,11 +17,16 @@ async function postcomment(req,res){
         return;
     }
     const comentList = await addCommentToDB(imageId,comment);
-
     response.success(req,res,comentList);
 }
 
+async function newCommentsImage(id){
+    const comments = await newCommentsByImage(id);
+    return comments;
+}
+
 module.exports = {
+    newCommentsImage,
     getcommentsById,
     postcomment
 }
