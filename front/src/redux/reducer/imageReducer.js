@@ -10,11 +10,9 @@ export default (state = initialState, action) => {
     switch (action.type) {
         case GET_ALL_IMAGE:
             return {
-                ...state
-            }
-        case GET_IMAGE:
-            return {
-                ...state
+                ...state,
+                listImage:action.payload,
+                cargando:false
             }
         case ADD_IMAGE:
             return {

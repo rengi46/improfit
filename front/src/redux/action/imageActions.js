@@ -1,3 +1,4 @@
+import axios from "axios";
 import { GET_IMAGE, ADD_IMAGE, GET_ALL_IMAGE } from "../type/imageType";
 
 
@@ -5,7 +6,7 @@ export const getAllImage = () => {
     return (dispatch) => {
         var config = {
             method: 'get',
-            url: 'http://localhost:3001/image',
+            url: 'http://localhost:3001/imageList',
             headers: { }
         };
         axios(config)
