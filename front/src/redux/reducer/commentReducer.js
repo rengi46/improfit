@@ -1,9 +1,9 @@
 import { GET_COMMENT, ADD_COMMENT } from "../type/commentType";
 
 const initialState = {
-    cargando:true,
+    loaded:true,
     comments:[]
-    
+
 }
 
 export default (state = initialState, action) => {

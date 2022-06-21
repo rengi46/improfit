@@ -1,5 +1,5 @@
 import axios from "axios";
-import { GET_IMAGE, ADD_IMAGE, GET_ALL_IMAGE } from "../type/imageType";
+import {  ADD_IMAGE, GET_ALL_IMAGE } from "../type/imageType";
 
 
 export const getAllImage = () => {
@@ -29,7 +29,7 @@ export const getImage = (idImage) => {
         axios(config)
         .then(response=>{
             dispatch({
-                type: GET_IMAGE,
+                type: ADD_IMAGE,
                 payload: response.data.body
             })
         })

@@ -1,9 +1,8 @@
 import { GET_IMAGE , GET_ALL_IMAGE , ADD_IMAGE } from "../type/imageType";
 
 const initialState = {
-    cargando:true,
+    loaded:true,
     listImage:[],
-    Image:[],
 }
 
 export default (state = initialState, action) => {
@@ -12,7 +11,7 @@ export default (state = initialState, action) => {
             return {
                 ...state,
                 listImage:action.payload,
-                cargando:false
+                loaded:false
             }
         case ADD_IMAGE:
             return {

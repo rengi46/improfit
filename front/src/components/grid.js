@@ -7,7 +7,7 @@ export const ImageGrid = () => {
     const image = useSelector(state => state.image);
     const dispatch = useDispatch();
     React.useEffect(() => {
-        if(image.cargando){
+        if(image.loaded){
             dispatch(getAllImage());
         }
 
@@ -29,7 +29,7 @@ export const ImageGrid = () => {
                 </tr>
             </thead>
             <tbody>
-            {image.cargando ? <tr><td>Cargando...</td></tr> :
+            {image.loaded ? <tr><td>loaded...</td></tr> :
                 image.listImage.map((item,index) => {
                     return <Cell
                         rank={item.rank}
