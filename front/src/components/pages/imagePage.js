@@ -33,7 +33,7 @@ export const ImagePgae = () => {
         console.log(commentState);
         dispatch(getCommentByImage(imageState.listImage[id-1]._id));
       }
-    }, [dispatch, imageState.loaded,commentState.loaded, id]);
+    }, [dispatch, imageState.loaded, commentState , id]);
   //verification state
 
   //function
@@ -57,7 +57,7 @@ export const ImagePgae = () => {
             {
               !commentState.loaded &&
                 <ListComments
-                  coments={commentState.comments[0].comments}
+                  coments={commentState.comments[0]}
                 />
            
             }

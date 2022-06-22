@@ -27,14 +27,16 @@ export const addCommentByImage = (idImage,comment) => {
             url: `http://localhost:3001/comments`,
             headers: { },
             data:{
-                idImage:idImage,
+                imageId:idImage,
                 comment:comment
             }
         };
         axios(config)
         .then(response=>{
+            console.log(response.data.body);
             dispatch({
                 type: ADD_COMMENT,
+                payload:response.data.body
             })
         })
     }

@@ -16,7 +16,8 @@ export default (state = initialState, action) => {
             }
         case ADD_COMMENT:
             return {
-                ...state
+                ...state,
+                comments:[action.payload]
             }
         default:
             return state

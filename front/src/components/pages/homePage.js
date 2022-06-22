@@ -20,6 +20,7 @@ export const HomePage = () => {
       </Button>
       <ImageGrid/>
       </div>
+      
       {modal && 
         <Modal 
           close={() => setModal(false)}
