@@ -1,8 +1,8 @@
 const imageModel = require('../models/image-model');
 
-const addImageToDB = async (title,url,rank) => {
+const addImageToDB = async (title,url,rank,date) => {
     try{
-        const image = await new imageModel({ title, url,rank });
+        const image = await new imageModel({ title, url,rank ,date});
         const imageSaved = await image.save();
         return imageSaved;
     }catch(err){

@@ -25,6 +25,9 @@ async function getImage(req,res){
 
 async function postImage(req,res){
     try{
+        console.log(req.body);
+        console.log(req.file);
+
         const {title} = req.body;
         const {file} = req;
         if(!title || !file ){
@@ -33,7 +36,7 @@ async function postImage(req,res){
         }
         const url = await fileToUrl(file);
         const rank = await getRank();
-        const image = await addImageToDB(title, url,rank);
+        const image = await addImageToDB(title, url,rank,new Date());
         await newCommentsImage(image._id);
         response.success(req,res,image);
     }catch(err){
