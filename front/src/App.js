@@ -3,13 +3,13 @@ import {
   Route,
 } from "react-router-dom";
 
-import { ImageGrid } from "./components/grid";
-import { ImagePgae } from "./components/imagePgae";
+import { HomePage } from "./components/pages/homePage";
+import { ImagePgae } from "./components/pages/imagePage";
 
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<ImageGrid />} />
+      <Route path="/" element={<HomePage />} />
       <Route path="/:id" element={<ImagePgae />} />
     </Routes>
   );
