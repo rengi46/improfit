@@ -10,8 +10,7 @@ export const ImageGrid = () => {
         if(image.loaded){
             dispatch(getAllImage());
         }
-
-    });
+    },[dispatch,image]);
   return (
     <div className="relative overflow-x-auto shadow-md sm:rounded-lg w-2/3 mx-auto my-16 ">
         <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
@@ -31,10 +30,13 @@ export const ImageGrid = () => {
             <tbody>
             {image.loaded ? <tr><td>loaded...</td></tr> :
                 image.listImage.map((item,index) => {
+                    const date = String(item.date).split("T")[0]
+                    console.log(date)
                     return <Cell
                         rank={item.rank}
                         title={item.title}
-                        date={"1994"}
+                        date={date}
+                        key={index}
                     />
                 })
             }

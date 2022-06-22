@@ -19,12 +19,18 @@ export const getAllImage = () => {
     }
 }
 
-export const getImage = (idImage) => {
+export const addImage = (imagefile,text) => {
+    const from = new FormData();
+    from.append("image", imagefile);
+    from.append("title", text);
     return (dispatch) => {
         var config = {
-            method: 'get',
-            url: `http://localhost:3001/image/${idImage}`,
-            headers: { }
+            method: 'post',
+            url: `http://localhost:3001/image`,
+            headers: {
+                'Content-Type': 'multipart/form-data'
+            },
+            data:from
         };
         axios(config)
         .then(response=>{
