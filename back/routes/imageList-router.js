@@ -1,5 +1,8 @@
+//library
 const {Router} = require("express");
-const {getImageList} = require("../controller/imageList-controller");
+//import files
+const {getImageList} = require("../controller/image-controller");
+
 
 const imageListRouter = Router();
 

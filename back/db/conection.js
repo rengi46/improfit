@@ -1,7 +1,8 @@
-const { connect, connection } = require("mongoose");
+//library
+const { connect } = require("mongoose");
 
 const connectDatabase = async (db) => {
-    await connect(db)
+  await connect(db)
 };
 
 module.exports = {

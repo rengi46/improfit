@@ -1,4 +1,6 @@
+//library
 const {Router} = require("express");
+//import files
 const {getcommentsById,postcomment} = require("../controller/comments-controller");
 
 const commentsRouter = Router();
