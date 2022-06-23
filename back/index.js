@@ -10,6 +10,7 @@ const CONFIG = require("./config");
 const PORT = CONFIG.port || 3001;
 
 (async () => {
+  console.log(CONFIG.db);
   await connectDatabase(CONFIG.db);
 })()
 
