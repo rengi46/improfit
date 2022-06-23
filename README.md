@@ -28,11 +28,11 @@ npm start
 ```
 
 
-## 4. Abrir aplicacion
+## 3. Abrir aplicacion
 
 En un navegador de internet, ir a http://localhost:3000
 
-## 5. Descripcion del servicio y su arquitectura
+## 4. Descripcion del servicio y su arquitectura
 
 El presente proyecto esta compuesto de dos aplicativos:
 
@@ -49,9 +49,14 @@ El presente proyecto esta compuesto de dos aplicativos:
         -{post}/comments/id:para subir un comentario en una imagen en concreto
 
 
-## 6. Posibles mejoras
+## 5. Posibles mejoras
 
-
-
-
++ implementar un ui/ux mas bonita
++ implementar paginado en la home Page
 + implementar tests que den covertura al 100% de los metodos implementados
+
+## 6. dificultades
+
++ poner en publicos los archivos en aws s3
++ hacer los tests en react
++ hacer los test con superTest 
