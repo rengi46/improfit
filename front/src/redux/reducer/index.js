@@ -4,6 +4,6 @@ import image from "./imageReducer";
 import comment from "./commentReducer";
 
 export default combineReducers({
-    image,
-    comment
+  image,
+  comment
 })

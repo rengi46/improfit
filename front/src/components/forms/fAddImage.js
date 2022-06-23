@@ -50,7 +50,7 @@ export const AddImage = ({close}) => {
           height={200}
           width={200} />
       }
-      <button type="Summit" class="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 ">
+      <button type="Summit" className="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 ">
         upload image
       </button>
     </form>

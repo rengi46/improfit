@@ -9,10 +9,8 @@ const devTools =window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_E
 const appliedMiddleware = devTools ? compose(applyMiddleware(thunk),devTools) : compose(applyMiddleware(thunk));
 
 const store = createStore(reducer, appliedMiddleware);
-// const store = configureStore({ reducer: reducer , middleware: appliedMiddleware });
-
 
 
 export const StoreProvider = (props) => {
-    return <Provider store={store}>{props.children}</Provider>
+  return <Provider store={store}>{props.children}</Provider>
 }

@@ -7,19 +7,19 @@ const initialState = {
 }
 
 export default (state = initialState, action) => {
-    switch (action.type) {
-        case GET_COMMENT:
-            return {
-                ...state,
-                comments:action.payload,
-                loaded:false
-            }
-        case ADD_COMMENT:
-            return {
-                ...state,
-                comments:[action.payload]
-            }
-        default:
-            return state
-    }
+  switch (action.type) {
+    case GET_COMMENT:
+      return {
+        ...state,
+        comments:action.payload,
+        loaded:false
+      }
+    case ADD_COMMENT:
+      return {
+        ...state,
+        comments:[action.payload]
+      }
+    default:
+      return state
+  }
 }
