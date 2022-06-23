@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import { useFormik } from 'formik';
-import InputUpdate from './inputFile/inputUpdate';
-import { Input } from './input';
-import { Button } from './button';
+
+import InputUpdate from '../inputs/inputFile/inputUpdate';
+import { Input } from '../inputs/input';
 import { useDispatch } from 'react-redux';
-import { addImage } from '../redux/action/imageActions';
+import { addImage } from '../../redux/action/imageActions';
 
 
 export const AddImage = ({close}) => {

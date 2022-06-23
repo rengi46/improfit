@@ -1,5 +1,5 @@
 import React from 'react'
-import { AddImage } from './fAddImage'
+import { AddImage } from './forms/fAddImage'
 
 export const Modal = ({close,children}) => {
   return (

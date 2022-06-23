@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { addCommentByImage } from '../redux/action/commentActions'
-import { Input } from './input'
+import { addCommentByImage } from '../../redux/action/commentActions'
+import { Input } from '../inputs/input'
 
 export const AddComment = ({imageId}) => {
   const [comment,setComment] = useState("")

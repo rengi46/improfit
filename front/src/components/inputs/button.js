@@ -1,7 +1,4 @@
 import React from 'react'
-import { useNavigate  } from "react-router-dom";
-import { BackIcon } from './icons/backIcon';
-import { UploadIcon } from './icons/uploadIcon';
 
 export const Button = ({type="button",click=()=>{},children}) => {
   return (

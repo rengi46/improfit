@@ -6,7 +6,7 @@ import { useNavigate  } from "react-router-dom";
 
 import { getCommentByImage } from '../../redux/action/commentActions';
 import { getAllImage } from '../../redux/action/imageActions';
-import { Button } from '../button';
+import { Button } from '../inputs/button';
 import { BackIcon } from '../icons/backIcon';
 import ImageCard from '../imageCard';
 import { ListComments } from '../listComments';
@@ -26,11 +26,9 @@ export const ImagePgae = () => {
         dispatch(getAllImage());
       }
       else if (commentState.loaded ){
-        console.log("comment loaded");
         dispatch(getCommentByImage(imageState.listImage[id-1]._id));
       }
       else if(commentState.comments[0].imageId !== imageState.listImage[id-1]._id){
-        console.log(commentState);
         dispatch(getCommentByImage(imageState.listImage[id-1]._id));
       }
     }, [dispatch, imageState.loaded, commentState , id]);
@@ -40,7 +38,6 @@ export const ImagePgae = () => {
     const handleClick = () => {
       navigate('/');
     }
-
 
     return (
         <div className='w-full m-auto my-16 text-center'>
@@ -59,7 +56,6 @@ export const ImagePgae = () => {
                 <ListComments
                   coments={commentState.comments[0]}
                 />
-           
             }
         </div>
     )
