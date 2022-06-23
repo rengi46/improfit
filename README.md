@@ -53,10 +53,10 @@ El presente proyecto esta compuesto de dos aplicativos:
 
 + implementar un ui/ux mas bonita
 + implementar paginado en la home Page
-+ implementar tests que den covertura al 100% de los metodos implementados
++ implementar tests
 
 ## 6. dificultades
 
 + poner en publicos los archivos en aws s3
 + hacer los tests en react
-+ hacer los test con superTest 
++ hacer los test con superTest
